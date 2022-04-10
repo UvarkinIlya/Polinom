@@ -82,6 +82,17 @@ TEST(TList, can_delFirst){
 	EXPECT_EQ(list.IsEnd(),true);
 }
 
+TEST(TList,can_delLast){
+	TList<int> list;
+
+	list.InsFirst(1);
+	list.DelLast();
+
+	list.Reset();
+
+	EXPECT_EQ(list.IsEnd(),true);
+}
+
 TEST(TList,can_delCurrent){
 	TList<int> list;
 
