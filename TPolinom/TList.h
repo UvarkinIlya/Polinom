@@ -36,7 +36,7 @@ class TList{
 
 		void Reset(){
 			pCurr = pFirst;
-			pPrev = nullptr;
+			pPrev = pStop;
 		}
 
 		bool IsEnd(){
@@ -66,7 +66,7 @@ class TList{
 				return;
 			}
 
-			TNode<T>* node = new TNode<T>(pValue, nullptr);
+			TNode<T>* node = new TNode<T>(pValue, pStop);
 
 			pLast->SetNext(node);
 			pLast = node;

@@ -21,6 +21,9 @@
     <ClInclude Include="TNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="THeadList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TList.cpp">
@@ -30,6 +33,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="THeadList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

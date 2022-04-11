@@ -139,11 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="THeadList.h" />
     <ClInclude Include="TList.h" />
     <ClInclude Include="TNode.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="THeadList.cpp" />
     <ClCompile Include="TList.cpp" />
     <ClCompile Include="TNode.cpp" />
   </ItemGroup>

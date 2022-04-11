@@ -1,13 +1,11 @@
-#include "TList.h"
+#include "THeadList.h"
 #include <iostream>
 
 using namespace std;
 void main(){
-	TList<int> list;
+	THeadList<int> list;
 
-	list.InsCurrent(1);
+	list.InsFirst(1);
 	list.InsFirst(2);
-	list.InsLast(3);
-
-	cout << list;
+	list.InsFirst(3);
 }
