@@ -63,7 +63,6 @@ class TPolinom: public THeadList<TMonom>{
 				insLast(p->pValue);
 				p = p->pNext;
 			}
-			
 		}
 
 		int getLen(){
@@ -135,7 +134,6 @@ class TPolinom: public THeadList<TMonom>{
 			return res;
 		}
 		
-
 		void multiplicationToMonom(TMonom monom){
 			for(reset(); !isEnd(); goNext()){
 				pCurrent->pValue *= monom;

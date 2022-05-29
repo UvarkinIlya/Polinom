@@ -21,5 +21,9 @@ class TNode{
 		T GetValue(){
 			return pValue;
 		}
+
+		void SetValue(T _pValue){
+			pValue = _pValue;
+		}
 };
 

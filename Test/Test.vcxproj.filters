@@ -27,6 +27,9 @@
     <ClCompile Include="test_TPolinom.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
+    <ClCompile Include="test_THeadList.cpp">
+      <Filter>Файлы ресурсов</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\mp2-lab2-matrix\gtest\gtest.h">

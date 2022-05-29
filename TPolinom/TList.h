@@ -137,6 +137,7 @@ class TList{
 				return;
 			}
 
+			TNode<T>* nextCurr = pCurr->GetNext();
 			if(pCurr == pFirst){
 				DelFirst();
 			} else if(pCurr == pLast){
@@ -144,12 +145,13 @@ class TList{
 			} else{
 				TNode<T>* delNode = pCurr;
 
-				pCurr = pCurr->GetNext();
-				pPrev->SetNext(pCurr);
-
 				delete delNode;
 				ListLen--;
 			}
+
+			pCurr = nextCurr;
+			pPrev->SetNext(pCurr);
+			pCurr = pPrev;
 		}
 
 		T GetCurrentValue(){
@@ -163,7 +165,8 @@ class TList{
 			}
 
 			for(list.Reset(); !list.IsEnd(); list.GoNext()){
-				out << list.GetCurrentValue() << " ";
+                T elem = list.GetCurrentValue();
+                out << elem << " ";
 			}
 
 			return out;

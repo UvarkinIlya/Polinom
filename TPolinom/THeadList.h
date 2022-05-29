@@ -3,9 +3,10 @@
 #include "TNode.h"
 
 template <class T>
-class THeadList:TList<T>{
-	TNode<T>* pHead;
+class THeadList: public TList<T>{
 	public:
+		TNode<T>* pHead;
+
 		THeadList():TList<T>(){
 			pHead = new TNode<T>(-1,TList<T>::pFirst);
 			pHead->SetNext(pHead);
@@ -17,8 +18,28 @@ class THeadList:TList<T>{
 			pHead->SetNext(TList<T>::pFirst);
 		}
 
+		void InsLast(T pValue){
+			TList<T>::InsLast(pValue);
+			pHead->SetNext(TList<T>::pFirst);
+		}
+
+		void InsCurrent(T pValue){
+			TList<T>::InsCurrent(pValue);
+			pHead->SetNext(TList<T>::pFirst);
+		}
+
 		void DelFirst(){
 			TList<T>::DelFirst();
+			pHead->SetNext(TList<T>::pFirst);
+		}
+
+		void DelLast(){
+			TList<T>::DelLast();
+			pHead->SetNext(TList<T>::pFirst);
+		}
+
+		void DelCurrent(){
+			TList<T>::DelCurrent();
 			pHead->SetNext(TList<T>::pFirst);
 		}
 };

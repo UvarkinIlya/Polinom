@@ -1,4 +1,6 @@
 #pragma once
+#include <ostream>
+
 class TMonom{
 	protected:
 		int Coeff; // коэффициент монома
@@ -7,6 +9,11 @@ class TMonom{
 		TMonom(int _Coeff = 1,int _Index = 0){
 			Coeff = _Coeff;
 			Index = _Index;
+		}
+
+		TMonom(const TMonom& monom){
+			Coeff = monom.Coeff;
+			Index = monom.Index;
 		}
 
 		void SetCoeff(int _Coeff){
@@ -21,7 +28,7 @@ class TMonom{
 			Index = _Index;
 		}
 
-		int GetCoeff(){
+		int GetIndex(){
 			return Index;
 		}
 
@@ -32,11 +39,22 @@ class TMonom{
 		}
 
 		bool operator==(const TMonom& monom){
-			return (Coeff == monom.Coeff && Index == monom.Index);
+			return Index == monom.Index;
 		}
 
 		bool operator<(const TMonom& monom){
 			return Index < monom.Index;
+		}
+
+		bool operator>(const TMonom& monom){
+			return Index > monom.Index;
+		}
+
+		friend std::ostream& operator<<(std::ostream& out, TMonom& monom) {
+                  out << monom.Coeff << "x^" << monom.Index / 100 << "y^"
+                      << monom.Index / 10 % 5 << "z^" << monom.Index % 10 << " ";
+
+			return out;
 		}
 };
 
